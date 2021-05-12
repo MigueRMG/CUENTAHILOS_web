@@ -1,0 +1,117 @@
+body {
+    font-family: "LATO", sans-serif;
+    font-weight: 400;
+    font-size: $default-font-size;
+    line-height: 1.7;
+    color: $color-grey-dark;
+}
+
+.paragraph {
+    text-align: justify;
+
+    &:not(:last-of-type) {
+        margin-bottom: 2.5rem;
+    }
+}
+
+.heading-primary {
+    color: $color-white;
+    margin-bottom: 6rem;
+
+    &--main {
+        font-size: 6rem;
+
+        &-1 {
+            display: inline-block;
+            font-family: "Lily Script One", cursive;
+            font-weight: 300;
+            letter-spacing: 0.5rem;
+
+            animation: lightSpeedInLeft 1s ease-out;
+        }
+
+        &-2 {
+            display: inline-block;
+            margin-left: 2.5rem;
+            letter-spacing: 3rem;
+            font-weight: 400;
+            animation: bounceIn 1.5s 0.6s;
+            animation-fill-mode: backwards;
+        }
+    }
+
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1rem;
+        //padding-right: 1.7rem;
+        text-transform: uppercase;
+        animation: backInDown 1s 1.5s;
+        animation-fill-mode: backwards;
+    }
+}
+
+.heading-secundary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(to right, $color-primary, $color-primary-dark);
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 0.2rem;
+    transition: all 0.2s 0.5s;
+    text-align: center;
+
+    //&:hover {
+    //    animation: tada 2s;
+    //}
+
+    &--white {
+        background-image: none;
+        background-color: $color-white;
+    }
+}
+
+.heading-tertiary {
+    font-size: $default-font-size;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+
+    .white-blue {
+        padding: 0.5rem 1rem;
+        background-color: $color-primary;
+        color: $color-white;
+        border-radius: 2px;
+    }
+
+    .white {
+        color: $color-white;
+    }
+}
+
+//MEDIA
+
+//768px
+@media only screen and (max-width: 48em) {
+    .heading-primary {
+        margin-bottom: 5rem;
+
+        &--main {
+            font-size: 5rem;
+            padding-left: 1.7rem;
+
+            &-2 {
+                margin-left: 2rem;
+                letter-spacing: 2.5rem;
+            }
+        }
+
+        &--sub {
+            font-size: 1.5rem;
+        }
+    }
+}

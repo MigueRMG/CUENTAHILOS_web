@@ -1,0 +1,84 @@
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: $color-black, $alpha: 0.9);
+    z-index: 103;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    //si la propiedad backdrop-filter es soportada por el navegador entonces se utilizan las siguientes propiedades
+    @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba($color: $color-black, $alpha: 0.3);
+    }
+
+    &__content {
+        width: 80%;
+        background-color: $color-white;
+        border-radius: 3px;
+        box-shadow: $default-shadow-box-hover;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s 0.2s;
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    &__text {
+        padding: 3rem 5rem 5rem 5rem;
+        display: flex;
+        flex-direction: column;
+
+        .heading-secundary {
+            align-self: center;
+        }
+
+        .pop-paragraph {
+            text-align: justify;
+
+            &:not(:last-of-type) {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+
+    //OPEN CLOSE FUNTIONALITY
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target &__content {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-grey-dark;
+            position: absolute;
+            top: 2.5rem;
+            right: 3.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+            line-height: 1;
+        }
+
+        &:hover,
+        &:active {
+            color: $color-primary;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.border-color {
+    height: 0.3rem;
+    width: 100%;
+    background-image: linear-gradient(
+        90deg,
+        $color-logo-cian 33.333%,
+        $color-logo-margenta 33.333%,
+        $color-logo-margenta 66.666%,
+        $color-logo-yellow 66.666%
+    );
+}

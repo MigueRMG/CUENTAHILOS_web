@@ -1,0 +1,283 @@
+/*
+.card {
+    perspective: 150rem;
+    position: relative;
+    height: 30rem;
+
+    &__side {
+        height: 30rem;
+        transition: all 0.8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: $default-border-box-radius;
+        overflow: hidden;
+        box-shadow: $default-shadow-box;
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+
+            &-cian {
+                background-color: $color-logo-cian;
+            }
+
+            &-margenta {
+                background-color: $color-logo-margenta;
+            }
+
+            &-yellow {
+                background-color: $color-logo-yellow;
+            }
+
+            &-black {
+                background-color: $color-black;
+            }
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0deg);
+    }
+
+    &__picture {
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+
+        &--1 {
+            background-image: url(../img/img4.jpg);
+        }
+    }
+
+    &__heading {
+        font-size: 2.2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 75%;
+    }
+
+    &__heading-span {
+        padding: 1rem 1.5rem;
+        box-decoration-break: clone;
+
+        &--cian {
+            background-color: $color-logo-cian-transp;
+        }
+
+        &--margenta {
+            background-color: $color-logo-margenta-transp;
+        }
+
+        &--yellow {
+            background-color: $color-logo-yellow-transp;
+        }
+
+        &--black {
+            background-color: $color-black-transp;
+        }
+    }
+
+    &__details {
+        height: 100%;
+        width: 100%;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        ul {
+            list-style: none;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-evenly;
+
+            li {
+                font-size: 1.6;
+                padding: 1rem;
+                color: $color-white;
+
+                display: flex;
+                align-items: center;
+
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    height: 2rem;
+                    width: 2rem;
+                    margin-right: 0.7rem;
+                    background-image: url(../img/miniLogo.png);
+                    background-size: cover;
+                }
+            }
+        }
+    }
+}
+*/
+
+.card {
+    perspective: 150rem;
+    position: relative;
+    height: 30rem;
+
+    &__side {
+        height: 30rem;
+        transition: all 0.8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: $default-border-box-radius;
+        overflow: hidden;
+        box-shadow: $default-shadow-box;
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+
+            &-cian {
+                background-color: $color-logo-cian;
+            }
+
+            &-margenta {
+                background-color: $color-logo-margenta;
+            }
+
+            &-yellow {
+                background-color: $color-logo-yellow;
+            }
+
+            &-black {
+                background-color: $color-black;
+            }
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0deg);
+    }
+
+    &__slide {
+        display: none;
+        width: 100%;
+        height: 100%;
+
+        &-picture {
+            background-size: cover;
+            background-position: top;
+            width: 100%;
+            height: 100%;
+
+            &--1 {
+                background-image: url(../img/img1.jpg);
+            }
+
+            &--2 {
+                background-image: url(../img/img2.jpg);
+            }
+
+            &--3 {
+                background-image: url(../img/img3.jpg);
+            }
+        }
+    }
+
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    &__heading {
+        font-size: 2.2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 75%;
+    }
+
+    &__heading-span {
+        padding: 1rem 1.5rem;
+        box-decoration-break: clone;
+
+        &--cian {
+            background-color: $color-logo-cian-transp;
+        }
+
+        &--margenta {
+            background-color: $color-logo-margenta-transp;
+        }
+
+        &--yellow {
+            background-color: $color-logo-yellow-transp;
+        }
+
+        &--black {
+            background-color: $color-black-transp;
+        }
+    }
+
+    &__details {
+        height: 100%;
+        width: 100%;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        ul {
+            list-style: none;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-evenly;
+
+            li {
+                font-size: 1.6;
+                padding: 1rem;
+                color: $color-white;
+
+                display: flex;
+                align-items: center;
+
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    height: 2rem;
+                    width: 2rem;
+                    margin-right: 0.7rem;
+                    background-image: url(../img/miniLogo.png);
+                    background-size: cover;
+                }
+            }
+        }
+    }
+}

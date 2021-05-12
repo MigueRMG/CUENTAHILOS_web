@@ -1,0 +1,107 @@
+//MEDIA QUERY MANAGER
+/*
+0 - 600px:     phone
+600 - 900px:   tablet portrait
+900 - 1200px:  tablet landscape
+1200 - 1800px: desktop
+1800 + :       big desktop
+
+ORDER: Base + Tipography > general layout + grid > page layout > components 
+
+$breakpoint arguement:
+- big-desk
+- desktop
+- tab-land
+- tab-port
+- phone
+*/
+
+@mixin respon($breakpoint) {
+    @if $breakpoint == big-desk {
+        //+1800px
+        @media only screen and (min-width: 112.5em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == desktop {
+        //-1800px
+        @media only screen and (max-width: 112.5em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == tab-land {
+        //1200px
+        @media only screen and (max-width: 75em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == tab-port {
+        //900px
+        @media only screen and (max-width: 56.25em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == phone {
+        //600px
+        @media only screen and (max-width: 37.5em) {
+            @content;
+        }
+    }
+}
+
+//para el caso en el dispositivo sea tactil y debemos quitar algunas propiedades :hover
+@mixin responTouch($breakpoint) {
+    @if $breakpoint == big-desk {
+        //1800px
+        @media only screen and (min-width: 112.5em), only screen and (hover: none) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == tab-land {
+        //1200px
+        @media only screen and (max-width: 75em), only screen and (hover: none) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == tab-port {
+        //900px
+        @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == phone {
+        //600px
+        @media only screen and (max-width: 37.5em), only screen and (hover: none) {
+            @content;
+        }
+    }
+}
+
+/*
+$resolution arguement:
+- low-res : 0 - 192dpi
+- high-res: +192dpi (192 es la resolucion de la pantalla de retina de Apple, pantalla de alta resolucion q tomo como referencia)
+*/
+
+@mixin responRes($resolution, $breakpoint1, $breakpoint2) {
+    @if ($resolution == high-res) and ($breakpoint1 == phone) {
+        //min-resolution no es soportado por safari, usamos -webkit-min-device-pixel-ratio: 2, is non-standard and should not be used without careful consideration.
+        @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+            only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em) {
+            @content;
+        }
+    }
+
+    @if ($breakpoint2 == big-desk) {
+        @media only screen and (min-width: 112.5em) {
+            @content;
+        }
+    }
+}

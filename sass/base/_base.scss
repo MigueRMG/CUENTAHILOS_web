@@ -1,0 +1,42 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px; 10/16 = 62.5%
+    scroll-behavior: smooth;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 3rem;
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
+
+//MEDIA
+
+//1800px
+@media only screen and (max-width: 112.5em) {
+    html {
+        font-size: 56.25%; // 1rem = 9px; 10/16 = 56.25%
+    }
+}
+
+//1200px
+@media only screen and (max-width: 75em) {
+    html {
+        font-size: 50%; // 1rem = 8px; 8/16 = 50%
+    }
+
+    body {
+        margin: 0;
+    }
+}

@@ -1,0 +1,44 @@
+//  COLORS
+$color-primary: #3282b8;
+$color-primary-light: #bbe1fa;
+$color-primary-dark: #0f4c75;
+$color-primary-darker: #1b262c;
+
+$color-logo-cian: #00afef;
+$color-logo-cian-transp: rgba(0, 175, 239, 0.808);
+$color-logo-margenta: #ec268f;
+$color-logo-margenta-transp: rgba(236, 38, 144, 0.801);
+$color-logo-yellow: #fff212;
+$color-logo-yellow-transp: rgba(255, 243, 18, 0.801);
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-1-transp: rgba(247, 247, 247, 0.64);
+$color-grey-light-2: #eeeeee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #313131;
+
+$color-white: #ffffff;
+$color-white-transp: rgba(255, 255, 255, 0.61);
+$color-black: #000;
+$color-black-transp: rgba(0, 0, 0, 0.801);
+
+// FONT
+$default-font-size: 1.8rem;
+
+//SHADOW
+$default-shadow-box: 0 1.5rem 4rem rgba($color-black, 0.15); /*box-shadow: x y tamanno color*/
+$default-shadow-box-hover: 0 2.5rem 4rem rgba($color-black, 0.25);
+
+$default-shadow-buttom: 0 0.2rem 0.5rem rgba($color-black, 0.2);
+$default-shadow-buttom-hover: 0 1rem 2rem rgba($color-black, 0.2);
+$default-shadow-buttom-active: 0 0.5rem 1rem rgba($color-black, 0.2);
+
+$default-shadow-form-focus: 0 0.5rem 1rem rgba($color-black, 0.1);
+
+$default-shadow-heading-hover: 0.5rem 1rem 2rem rgba($color-black, 0.4);
+
+//BORDER-RADIUS
+$default-border-box-radius: 0.3rem;
+$default-border-buttom-radius: 18rem;

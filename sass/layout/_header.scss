@@ -1,0 +1,64 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba($color-primary, 0.8), rgba($color-primary-dark, 0.8)), url(../img/img1.jpg);
+    clip-path: polygon(0% 0%, 0 90%, 50% 100%, 100% 90%, 100% 0%);
+    background-size: cover;
+    background-position: top;
+    overflow: hidden;
+    z-index: 5;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__logo-box {
+        transform: translateY(-7rem);
+    }
+
+    &__logo {
+        height: 9rem;
+    }
+
+    &__text-box {
+        text-align: center;
+        margin-top: -4rem;
+    }
+}
+
+//MEDIA
+
+//768px
+@media only screen and (max-width: 48em) {
+    .header {
+        &__logo {
+            height: 8rem;
+        }
+    }
+}
+
+//580px
+@media only screen and (max-width: 36.25em) {
+    .header {
+        &__logo {
+            height: 7rem;
+        }
+    }
+}
+
+//440px
+@media only screen and (max-width: 27.5em) {
+    .header {
+        clip-path: polygon(0% 0%, 0 93%, 50% 100%, 100% 93%, 100% 0%);
+    }
+}
+
+//368px
+@media only screen and (max-width: 23em) {
+    .header {
+        &__logo {
+            height: 5.5rem;
+        }
+    }
+}

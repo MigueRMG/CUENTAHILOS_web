@@ -1,0 +1,129 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__group:not(:last-child) {
+        width: 90%;
+        margin-bottom: 2rem;
+    }
+
+    &__input {
+        font-size: 1.6rem;
+        font-family: inherit;
+        color: $color-white;
+        padding: 1.5rem 2rem;
+        border-radius: 0.2rem;
+        background-color: $color-primary;
+        border: none;
+        border-bottom: solid 3px transparent;
+        width: 100%;
+        display: block;
+        transition: all 0.3s;
+
+        &:focus {
+            outline: none;
+            box-shadow: $default-shadow-form-focus;
+            background-color: rgba($color: $color-white, $alpha: 0.5);
+            color: $color-grey-dark;
+            border-bottom: solid 3px $color-logo-cian;
+
+            &::-webkit-input-placeholder {
+                color: $color-grey-dark-2;
+            }
+        }
+
+        &:focus:invalid {
+            box-shadow: $default-shadow-form-focus;
+            border-bottom: solid 3px $color-logo-margenta;
+        }
+
+        &:required {
+            box-shadow: none;
+        }
+
+        &::-webkit-input-placeholder {
+            color: $color-white;
+        }
+    }
+
+    &__textarea {
+        height: 15rem;
+    }
+
+    &__label {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: 0.7rem;
+        display: block;
+        transition: all 0.3s;
+    }
+
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+    &__check-group {
+        display: inline-block;
+    }
+
+    &__check-input {
+        visibility: hidden;
+    }
+
+    &__check-label {
+        font-size: $default-font-size;
+        color: $color-grey-dark;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4.5rem;
+
+        .private-policy {
+            &:link,
+            &:visited {
+                display: inline-block;
+                text-decoration: none;
+                color: $color-primary;
+                transition: all 0.2s;
+            }
+
+            &:hover,
+            &:active {
+                background-color: $color-primary;
+                color: $color-white;
+                box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+                transform: scale(1.1) translateY(-0.2rem);
+            }
+        }
+    }
+
+    &__check-button {
+        height: 3rem;
+        width: 3rem;
+        border: solid 3px $color-primary;
+        display: inline-block;
+        position: absolute;
+        top: -0.4rem;
+        left: 0;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0.4rem;
+            left: 0.4rem;
+            height: 1.6rem;
+            width: 1.6rem;
+            background-color: $color-primary;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+    }
+
+    &__check-input:checked ~ &__check-label &__check-button::after {
+        opacity: 1;
+    }
+}
